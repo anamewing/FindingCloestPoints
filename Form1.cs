@@ -23,11 +23,6 @@ namespace FindingClosestPoints
             panelGragh = panel1.CreateGraphics();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
         private void panel1_Click(object sender, EventArgs e)
         {
             MouseEventArgs mye = (MouseEventArgs)e;
