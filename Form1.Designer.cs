@@ -33,13 +33,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonClearDraw = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pointsGridDraw = new System.Windows.Forms.DataGridView();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonFindDraw = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pointsGridDraw)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -56,7 +56,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.buttonFindDraw);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.pointsGridDraw);
             this.tabPage1.Controls.Add(this.buttonClearDraw);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -99,23 +99,24 @@
             this.buttonClearDraw.TabIndex = 1;
             this.buttonClearDraw.Text = "清除点";
             this.buttonClearDraw.UseVisualStyleBackColor = true;
+            this.buttonClearDraw.Click += new System.EventHandler(this.buttonClearDraw_Click);
             // 
-            // dataGridView1
+            // pointsGridDraw
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pointsGridDraw.AllowUserToAddRows = false;
+            this.pointsGridDraw.AllowUserToDeleteRows = false;
+            this.pointsGridDraw.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pointsGridDraw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pointsGridDraw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.X,
             this.Y});
-            this.dataGridView1.Location = new System.Drawing.Point(415, 68);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(200, 313);
-            this.dataGridView1.TabIndex = 2;
+            this.pointsGridDraw.Location = new System.Drawing.Point(415, 68);
+            this.pointsGridDraw.Name = "pointsGridDraw";
+            this.pointsGridDraw.ReadOnly = true;
+            this.pointsGridDraw.RowTemplate.Height = 23;
+            this.pointsGridDraw.Size = new System.Drawing.Size(200, 313);
+            this.pointsGridDraw.TabIndex = 2;
             // 
             // X
             // 
@@ -133,6 +134,7 @@
             // 
             // buttonFindDraw
             // 
+            this.buttonFindDraw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonFindDraw.Location = new System.Drawing.Point(520, 27);
             this.buttonFindDraw.Name = "buttonFindDraw";
             this.buttonFindDraw.Size = new System.Drawing.Size(75, 23);
@@ -150,7 +152,7 @@
             this.Text = "寻找最近点对";
             this.tabControlMain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pointsGridDraw)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,7 +164,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button buttonClearDraw;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView pointsGridDraw;
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;
         private System.Windows.Forms.Button buttonFindDraw;

@@ -12,9 +12,15 @@ namespace FindingClosestPoints
 {
     public partial class Form1 : Form
     {
+        AxisWithPoints AxisWithPoints1=new AxisWithPoints();
+        
+        System.Drawing.Pen myRedPen = new Pen(Color.Red, 1);
+        Graphics panelGragh;
+
         public Form1()
         {
             InitializeComponent();
+            panelGragh = panel1.CreateGraphics();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -24,11 +30,25 @@ namespace FindingClosestPoints
 
         private void panel1_Click(object sender, EventArgs e)
         {
-            MouseEventArgs mye=(MouseEventArgs) e;
-            System.Drawing.Pen myPen = new Pen(Color.Red,1);
-            Graphics panelGragh = panel1.CreateGraphics();
-            panelGragh.DrawEllipse(myPen, mye.Location.X, mye.Location.Y, 2, 2);            
-            
+            MouseEventArgs mye = (MouseEventArgs)e;
+            int x = mye.Location.X;
+            int y = mye.Location.Y;
+            panelGragh.DrawEllipse(myRedPen, x, y, 2, 2);
+            addPointsInGrid1(x, y);
+            AxisWithPoints1.addPoints(x, y);
+
+        }
+
+        void addPointsInGrid1(double x,double y){
+            pointsGridDraw.Rows.Add(x,y);
+        }
+
+        private void buttonClearDraw_Click(object sender, EventArgs e)
+        {
+            AxisWithPoints1 = new AxisWithPoints();
+            panelGragh.Clear(panel1.BackColor);
+            pointsGridDraw.Rows.Clear();
+
         }
 
     }
