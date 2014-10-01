@@ -81,6 +81,7 @@ namespace FindingClosestPoints
             {
                 for (int j = 1; j < 8; j++)
                 {
+                    if ((i + j) >= HalfLinePoints.Count) continue;
                     double tempD = distance2Points(HalfLinePoints[i], HalfLinePoints[i + j]);
                     if (tempD < neard)
                     {
