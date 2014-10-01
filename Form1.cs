@@ -46,5 +46,11 @@ namespace FindingClosestPoints
 
         }
 
+        private void buttonFindDraw_Click(object sender, EventArgs e)
+        {
+            double[][] closestPoints=AxisWithPoints1.FindClosestPointsPublic();
+            textBox1.Text = closestPoints.ToString();
+        }
+
     }
 }

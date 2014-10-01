@@ -30,13 +30,14 @@
         {
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.buttonClearDraw = new System.Windows.Forms.Button();
+            this.buttonFindDraw = new System.Windows.Forms.Button();
             this.pointsGridDraw = new System.Windows.Forms.DataGridView();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonFindDraw = new System.Windows.Forms.Button();
+            this.buttonClearDraw = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControlMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pointsGridDraw)).BeginInit();
@@ -55,6 +56,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.buttonFindDraw);
             this.tabPage1.Controls.Add(this.pointsGridDraw);
             this.tabPage1.Controls.Add(this.buttonClearDraw);
@@ -67,38 +69,16 @@
             this.tabPage1.Text = "直接绘点";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // buttonFindDraw
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.PeachPuff;
-            this.panel1.Location = new System.Drawing.Point(8, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(377, 403);
-            this.panel1.TabIndex = 0;
-            this.panel1.Click += new System.EventHandler(this.panel1_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(639, 417);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "随机生成点";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // buttonClearDraw
-            // 
-            this.buttonClearDraw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClearDraw.Location = new System.Drawing.Point(424, 27);
-            this.buttonClearDraw.Name = "buttonClearDraw";
-            this.buttonClearDraw.Size = new System.Drawing.Size(75, 23);
-            this.buttonClearDraw.TabIndex = 1;
-            this.buttonClearDraw.Text = "清除点";
-            this.buttonClearDraw.UseVisualStyleBackColor = true;
-            this.buttonClearDraw.Click += new System.EventHandler(this.buttonClearDraw_Click);
+            this.buttonFindDraw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFindDraw.Location = new System.Drawing.Point(520, 27);
+            this.buttonFindDraw.Name = "buttonFindDraw";
+            this.buttonFindDraw.Size = new System.Drawing.Size(75, 23);
+            this.buttonFindDraw.TabIndex = 3;
+            this.buttonFindDraw.Text = "开始寻找";
+            this.buttonFindDraw.UseVisualStyleBackColor = true;
+            this.buttonFindDraw.Click += new System.EventHandler(this.buttonFindDraw_Click);
             // 
             // pointsGridDraw
             // 
@@ -131,15 +111,45 @@
             this.Y.ReadOnly = true;
             this.Y.Width = 70;
             // 
-            // buttonFindDraw
+            // buttonClearDraw
             // 
-            this.buttonFindDraw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFindDraw.Location = new System.Drawing.Point(520, 27);
-            this.buttonFindDraw.Name = "buttonFindDraw";
-            this.buttonFindDraw.Size = new System.Drawing.Size(75, 23);
-            this.buttonFindDraw.TabIndex = 3;
-            this.buttonFindDraw.Text = "开始寻找";
-            this.buttonFindDraw.UseVisualStyleBackColor = true;
+            this.buttonClearDraw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonClearDraw.Location = new System.Drawing.Point(424, 27);
+            this.buttonClearDraw.Name = "buttonClearDraw";
+            this.buttonClearDraw.Size = new System.Drawing.Size(75, 23);
+            this.buttonClearDraw.TabIndex = 1;
+            this.buttonClearDraw.Text = "清除点";
+            this.buttonClearDraw.UseVisualStyleBackColor = true;
+            this.buttonClearDraw.Click += new System.EventHandler(this.buttonClearDraw_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel1.Location = new System.Drawing.Point(8, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(377, 403);
+            this.panel1.TabIndex = 0;
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(639, 417);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "随机生成点";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(424, 388);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(191, 21);
+            this.textBox1.TabIndex = 4;
             // 
             // Form1
             // 
@@ -151,6 +161,7 @@
             this.Text = "寻找最近点对";
             this.tabControlMain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pointsGridDraw)).EndInit();
             this.ResumeLayout(false);
 
@@ -167,6 +178,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;
         private System.Windows.Forms.Button buttonFindDraw;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

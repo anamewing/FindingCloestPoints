@@ -91,18 +91,11 @@ namespace FindingClosestPoints
                 }
             }
             return nearPoints;
+        }
 
-
-
-
-             
-
-
-
-
-
-
-
+        public double[][] FindClosestPointsPublic()
+        {
+            return FindClosest(Points);
         }
 
         double distance2Points(double[] point1, double[] point2)
