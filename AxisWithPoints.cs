@@ -53,8 +53,8 @@ namespace FindingClosestPoints
             int halfLength=(int)Math.Floor(PointsList.Count/2.0);
 
             //治
-            double[][] nearPoints1 = FindClosest(PointsList.Take(halfLength) as List<double[]>);
-            double[][] nearPoints2 = FindClosest(PointsList.Skip(halfLength) as List<double[]>);
+            double[][] nearPoints1 = FindClosest(PointsList.Take(halfLength).ToList<double[]>());
+            double[][] nearPoints2 = FindClosest(PointsList.Skip(halfLength).ToList<double[]>());
 
             //合
             double neard1 = distance2Points(nearPoints1[0], nearPoints1[1]);
