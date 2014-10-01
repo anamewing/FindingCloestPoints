@@ -19,7 +19,7 @@ namespace FindingClosestPoints
         {
             double[][] nearPoints=new double[2][];
             //点数小于等于3时直接求最近点
-            if (PointsList.Count<=3){
+            if (PointsList.Count==3){
                 double d1=distance2Points(PointsList[0],PointsList[1]);
                 double d2=distance2Points(PointsList[0],PointsList[2]);
                 double d3=distance2Points(PointsList[1],PointsList[2]);
@@ -39,6 +39,12 @@ namespace FindingClosestPoints
                        nearPoints[1]=(PointsList[1]);
                     }
                 }
+                return nearPoints;
+            }
+            else if (PointsList.Count == 2)
+            {
+                nearPoints[0] = PointsList[0];
+                nearPoints[1] = PointsList[1];
                 return nearPoints;
             }
 
