@@ -96,5 +96,38 @@ namespace FindingClosestPoints
             return "(" + points[0].ToString() + "," + points[1].ToString() + ")";
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            int maxPower = 5;
+            dataGridViewTimeComplex.Rows.Add(maxPower-1);
+            for (int i = 0; i < maxPower; i++)
+            {
+                dataGridViewTimeComplex.Rows[i].Cells[0].Value =(int) Math.Pow(10, i+1);
+            }
+        }
+
+        private void calnLogn_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridViewTimeComplex.Rows.Count; i++)
+            {
+                int pointsNumber = 0;
+                try
+                {
+                    pointsNumber = (int)dataGridViewTimeComplex.Rows[i].Cells[0].Value;
+                }
+                catch (Exception excep) { textLogging(excep.ToString()); continue; }
+                if (pointsNumber < 1) continue;
+                AxisWithPoints AxisWithPoints3 = new AxisWithPoints(pointsNumber);
+                textLogging("开始寻找于" + DateTime.Now.ToLongTimeString());
+                textLogging("共计" + AxisWithPoints3.Points.Count.ToString() + "个点");
+                var watch = System.Diagnostics.Stopwatch.StartNew();
+                AxisWithPoints3.FindClosestPointsPublic();
+                watch.Stop();
+                textLogging("结束寻找于" + DateTime.Now.ToLongTimeString());
+                textLogging("共计耗时" + watch.ElapsedMilliseconds.ToString() + "毫秒");
+                dataGridViewTimeComplex.Rows[i].Cells[1].Value = watch.ElapsedMilliseconds;
+            }
+        }
+
     }
 }
