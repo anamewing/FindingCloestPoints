@@ -50,6 +50,11 @@ namespace FindingClosestPoints
 
         private void buttonFindDraw_Click(object sender, EventArgs e)
         {
+            if (AxisWithPoints1.Points.Count <= 1)
+            {
+                textLogging("error:点数太少");
+                return;
+            }
             textLogging("开始寻找于" + DateTime.Now.ToLongTimeString());
             textLogging("共计" + AxisWithPoints1.Points.Count.ToString() + "个点");
             var watch = System.Diagnostics.Stopwatch.StartNew();
@@ -64,6 +69,31 @@ namespace FindingClosestPoints
         public void textLogging(string str)
         {
             textBox2.Text += str + Environment.NewLine;
+        }
+
+        private void buttonRandomAndFind_Click(object sender, EventArgs e)
+        {
+            int RandomPointsNumber = Convert.ToInt32(textBoxRandomNumer.Text);
+            if (RandomPointsNumber <= 1)
+            {
+                textLogging("error:点数太少");
+                return;
+            }
+            var AxisWithPoints2 = new AxisWithPoints(RandomPointsNumber);
+            textLogging("开始寻找于" + DateTime.Now.ToLongTimeString());
+            textLogging("共计" + AxisWithPoints2.Points.Count.ToString() + "个点");
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            double[][] closestPoints = AxisWithPoints2.FindClosestPointsPublic();
+            watch.Stop();
+            richTextBoxOutputResult.Text = "两点为" + pointsToString(closestPoints[0]) + "与" + pointsToString(closestPoints[1]);
+            textLogging("结束寻找于" + DateTime.Now.ToLongTimeString());
+            textLogging("共计耗时" + watch.ElapsedMilliseconds.ToString() + "毫秒");
+           
+        }
+
+        string pointsToString(double[] points)
+        {
+            return "(" + points[0].ToString() + "," + points[1].ToString() + ")";
         }
 
     }
