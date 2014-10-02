@@ -50,10 +50,20 @@ namespace FindingClosestPoints
 
         private void buttonFindDraw_Click(object sender, EventArgs e)
         {
+            textLogging("开始寻找于" + DateTime.Now.ToLongTimeString());
+            textLogging("共计" + AxisWithPoints1.Points.Count.ToString() + "个点");
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             double[][] closestPoints=AxisWithPoints1.FindClosestPointsPublic();
+            watch.Stop();
             panelGragh.FillEllipse(myBlueBrush, (int)closestPoints[0][0], (int)closestPoints[0][1], 3, 3);
             panelGragh.FillEllipse(myBlueBrush, (int)closestPoints[1][0], (int)closestPoints[1][1], 3, 3);
-            textBox1.Text = closestPoints.ToString();
+            textLogging("结束寻找于" + DateTime.Now.ToLongTimeString());
+            textLogging("共计耗时"+watch.ElapsedMilliseconds.ToString()+"毫秒");
+        }
+
+        public void textLogging(string str)
+        {
+            textBox2.Text += str + Environment.NewLine;
         }
 
     }

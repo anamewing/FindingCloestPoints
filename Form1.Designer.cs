@@ -30,6 +30,7 @@
         {
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonFindDraw = new System.Windows.Forms.Button();
             this.pointsGridDraw = new System.Windows.Forms.DataGridView();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,7 +38,7 @@
             this.buttonClearDraw = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControlMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pointsGridDraw)).BeginInit();
@@ -47,11 +48,11 @@
             // 
             this.tabControlMain.Controls.Add(this.tabPage1);
             this.tabControlMain.Controls.Add(this.tabPage2);
-            this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControlMain.Location = new System.Drawing.Point(0, 0);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(647, 443);
+            this.tabControlMain.Size = new System.Drawing.Size(647, 369);
             this.tabControlMain.TabIndex = 0;
             // 
             // tabPage1
@@ -64,10 +65,17 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(639, 417);
+            this.tabPage1.Size = new System.Drawing.Size(639, 343);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "直接绘点";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(424, 388);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(191, 21);
+            this.textBox1.TabIndex = 4;
             // 
             // buttonFindDraw
             // 
@@ -94,7 +102,7 @@
             this.pointsGridDraw.Name = "pointsGridDraw";
             this.pointsGridDraw.ReadOnly = true;
             this.pointsGridDraw.RowTemplate.Height = 23;
-            this.pointsGridDraw.Size = new System.Drawing.Size(200, 313);
+            this.pointsGridDraw.Size = new System.Drawing.Size(200, 239);
             this.pointsGridDraw.TabIndex = 2;
             // 
             // X
@@ -130,7 +138,7 @@
             this.panel1.BackColor = System.Drawing.Color.PeachPuff;
             this.panel1.Location = new System.Drawing.Point(8, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(377, 403);
+            this.panel1.Size = new System.Drawing.Size(377, 329);
             this.panel1.TabIndex = 0;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
@@ -144,18 +152,22 @@
             this.tabPage2.Text = "随机生成点";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBox2
             // 
-            this.textBox1.Location = new System.Drawing.Point(424, 388);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 21);
-            this.textBox1.TabIndex = 4;
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBox2.Location = new System.Drawing.Point(0, 363);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox2.Size = new System.Drawing.Size(647, 80);
+            this.textBox2.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 443);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.tabControlMain);
             this.Name = "Form1";
             this.Text = "寻找最近点对";
@@ -164,6 +176,7 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pointsGridDraw)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -179,6 +192,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;
         private System.Windows.Forms.Button buttonFindDraw;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
