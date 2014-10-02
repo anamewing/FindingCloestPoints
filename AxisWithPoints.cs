@@ -10,7 +10,17 @@ namespace FindingClosestPoints
     {
         public List<double[]> Points =new List<double[]>();
 
-        public void addPoints(double x,double y){
+        public AxisWithPoints(int initPointsNumber = 0)
+        {
+            Random rand1 = new Random();
+            for (int i = 0; i < initPointsNumber; i++)
+            {
+                addPoints(rand1.Next(), rand1.Next());
+            }
+        }
+
+        public void addPoints(double x, double y)
+        {
             Points.Add(new double[]{x,y});
         }
 
