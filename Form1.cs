@@ -15,6 +15,8 @@ namespace FindingClosestPoints
         AxisWithPoints AxisWithPoints1=new AxisWithPoints();
         
         System.Drawing.Pen myRedPen = new Pen(Color.Red, 1);
+        System.Drawing.Pen myBluePen = new Pen(Color.Blue, 1);
+        System.Drawing.SolidBrush myBlueBrush = new SolidBrush(Color.Blue);
         Graphics panelGragh;
 
         public Form1()
@@ -49,6 +51,8 @@ namespace FindingClosestPoints
         private void buttonFindDraw_Click(object sender, EventArgs e)
         {
             double[][] closestPoints=AxisWithPoints1.FindClosestPointsPublic();
+            panelGragh.FillEllipse(myBlueBrush, (int)closestPoints[0][0], (int)closestPoints[0][1], 3, 3);
+            panelGragh.FillEllipse(myBlueBrush, (int)closestPoints[1][0], (int)closestPoints[1][1], 3, 3);
             textBox1.Text = closestPoints.ToString();
         }
 
