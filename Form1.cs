@@ -60,8 +60,8 @@ namespace FindingClosestPoints
             var watch = System.Diagnostics.Stopwatch.StartNew();
             double[][] closestPoints=AxisWithPoints1.FindClosestPointsPublic();
             watch.Stop();
-            panelGragh.FillEllipse(myBlueBrush, (int)closestPoints[0][0], (int)closestPoints[0][1], 3, 3);
-            panelGragh.FillEllipse(myBlueBrush, (int)closestPoints[1][0], (int)closestPoints[1][1], 3, 3);
+            panelGragh.FillEllipse(myBlueBrush, (int)closestPoints[0][0], (int)closestPoints[0][1], 5, 5);
+            panelGragh.FillEllipse(myBlueBrush, (int)closestPoints[1][0], (int)closestPoints[1][1], 5, 5);
             textLogging("结束寻找于" + DateTime.Now.ToLongTimeString());
             textLogging("共计耗时"+watch.ElapsedMilliseconds.ToString()+"毫秒");
         }
