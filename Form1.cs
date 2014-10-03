@@ -153,5 +153,16 @@ namespace FindingClosestPoints
             }
         }
 
+        //缩放窗口或最小化还原窗口后重画图形。需要重新取得panel大小。
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            panelGragh.Clear(panel1.BackColor);
+            panelGragh = panel1.CreateGraphics();
+            foreach (double[] point in AxisWithPoints1.Points)
+            {
+                panelGragh.DrawEllipse(myRedPen, (int)point[0], (int)point[1], 2, 2);
+            }
+        }
+
     }
 }
