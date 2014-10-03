@@ -37,26 +37,26 @@
             this.buttonClearDraw = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.caln2 = new System.Windows.Forms.Button();
+            this.calnLogn = new System.Windows.Forms.Button();
+            this.dataGridViewTimeComplex = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxRandomNumer = new System.Windows.Forms.TextBox();
             this.richTextBoxOutputResult = new System.Windows.Forms.RichTextBox();
             this.buttonRandomAndFind = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewTimeComplex = new System.Windows.Forms.DataGridView();
             this.pointsNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slowtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calnLogn = new System.Windows.Forms.Button();
-            this.caln2 = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pointsGridDraw)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTimeComplex)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -81,7 +81,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(533, 443);
+            this.tabPage1.Size = new System.Drawing.Size(576, 456);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "直接绘点";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -163,6 +163,56 @@
             this.tabPage2.Text = "随机生成点";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.caln2);
+            this.groupBox2.Controls.Add(this.calnLogn);
+            this.groupBox2.Controls.Add(this.dataGridViewTimeComplex);
+            this.groupBox2.Location = new System.Drawing.Point(203, 26);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(353, 379);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "时间复杂度分析";
+            // 
+            // caln2
+            // 
+            this.caln2.Location = new System.Drawing.Point(196, 18);
+            this.caln2.Name = "caln2";
+            this.caln2.Size = new System.Drawing.Size(75, 23);
+            this.caln2.TabIndex = 2;
+            this.caln2.Text = "测试n^2";
+            this.caln2.UseVisualStyleBackColor = true;
+            // 
+            // calnLogn
+            // 
+            this.calnLogn.Location = new System.Drawing.Point(50, 18);
+            this.calnLogn.Name = "calnLogn";
+            this.calnLogn.Size = new System.Drawing.Size(106, 23);
+            this.calnLogn.TabIndex = 1;
+            this.calnLogn.Text = "测试nLog(n)";
+            this.calnLogn.UseVisualStyleBackColor = true;
+            this.calnLogn.Click += new System.EventHandler(this.calnLogn_Click);
+            // 
+            // dataGridViewTimeComplex
+            // 
+            this.dataGridViewTimeComplex.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewTimeComplex.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTimeComplex.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pointsNumber,
+            this.time,
+            this.slowtime});
+            this.dataGridViewTimeComplex.Location = new System.Drawing.Point(6, 44);
+            this.dataGridViewTimeComplex.Name = "dataGridViewTimeComplex";
+            this.dataGridViewTimeComplex.RowTemplate.Height = 23;
+            this.dataGridViewTimeComplex.Size = new System.Drawing.Size(341, 329);
+            this.dataGridViewTimeComplex.TabIndex = 0;
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -226,41 +276,11 @@
             this.textBox2.Size = new System.Drawing.Size(104, 456);
             this.textBox2.TabIndex = 1;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.caln2);
-            this.groupBox2.Controls.Add(this.calnLogn);
-            this.groupBox2.Controls.Add(this.dataGridViewTimeComplex);
-            this.groupBox2.Location = new System.Drawing.Point(203, 26);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(353, 379);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "时间复杂度分析";
-            // 
-            // dataGridViewTimeComplex
-            // 
-            this.dataGridViewTimeComplex.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewTimeComplex.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTimeComplex.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pointsNumber,
-            this.time,
-            this.slowtime});
-            this.dataGridViewTimeComplex.Location = new System.Drawing.Point(6, 44);
-            this.dataGridViewTimeComplex.Name = "dataGridViewTimeComplex";
-            this.dataGridViewTimeComplex.RowTemplate.Height = 23;
-            this.dataGridViewTimeComplex.Size = new System.Drawing.Size(341, 329);
-            this.dataGridViewTimeComplex.TabIndex = 0;
-            // 
             // pointsNumber
             // 
             this.pointsNumber.HeaderText = "点数量";
             this.pointsNumber.Name = "pointsNumber";
+            this.pointsNumber.ReadOnly = true;
             // 
             // time
             // 
@@ -273,25 +293,6 @@
             this.slowtime.HeaderText = "n2耗费时间";
             this.slowtime.Name = "slowtime";
             this.slowtime.ReadOnly = true;
-            // 
-            // calnLogn
-            // 
-            this.calnLogn.Location = new System.Drawing.Point(50, 18);
-            this.calnLogn.Name = "calnLogn";
-            this.calnLogn.Size = new System.Drawing.Size(106, 23);
-            this.calnLogn.TabIndex = 1;
-            this.calnLogn.Text = "测试nLog(n)";
-            this.calnLogn.UseVisualStyleBackColor = true;
-            this.calnLogn.Click += new System.EventHandler(this.calnLogn_Click);
-            // 
-            // caln2
-            // 
-            this.caln2.Location = new System.Drawing.Point(196, 18);
-            this.caln2.Name = "caln2";
-            this.caln2.Size = new System.Drawing.Size(75, 23);
-            this.caln2.TabIndex = 2;
-            this.caln2.Text = "测试n^2";
-            this.caln2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -307,10 +308,10 @@
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pointsGridDraw)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTimeComplex)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
