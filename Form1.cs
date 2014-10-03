@@ -25,6 +25,8 @@ namespace FindingClosestPoints
             panelGragh = panel1.CreateGraphics();
         }
 
+        //实现点击画点，并将点的左边显示在表格、保存在AxisWithPoints1
+        //表格中的点坐标只用来显示，不用来计算
         private void panel1_Click(object sender, EventArgs e)
         {
             MouseEventArgs mye = (MouseEventArgs)e;
@@ -40,6 +42,7 @@ namespace FindingClosestPoints
             pointsGridDraw.Rows.Add(x,y);
         }
 
+        //清空画布
         private void buttonClearDraw_Click(object sender, EventArgs e)
         {
             AxisWithPoints1 = new AxisWithPoints();
@@ -66,11 +69,13 @@ namespace FindingClosestPoints
             textLogging("共计耗时"+watch.ElapsedMilliseconds.ToString()+"毫秒");
         }
 
+        //将程序右侧textBox作为日志记录框
         public void textLogging(string str)
         {
             textBox2.Text += str + Environment.NewLine;
         }
 
+        //随机生成点的功能，使用AxisWithPoints2
         private void buttonRandomAndFind_Click(object sender, EventArgs e)
         {
             int RandomPointsNumber = Convert.ToInt32(textBoxRandomNumer.Text);
@@ -96,6 +101,7 @@ namespace FindingClosestPoints
             return "(" + points[0].ToString() + "," + points[1].ToString() + ")";
         }
 
+        //时间复杂度分析表格中填入初始数据：一列n
         private void Form1_Load(object sender, EventArgs e)
         {
             int maxPower = 16;
@@ -107,6 +113,7 @@ namespace FindingClosestPoints
             }
         }
 
+        //nLog(n)复杂度测试
         private void calnLogn_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dataGridViewTimeComplex.Rows.Count; i++)
@@ -130,6 +137,7 @@ namespace FindingClosestPoints
             }
         }
 
+        //n^2复杂度测试
         private void caln2_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dataGridViewTimeComplex.Rows.Count; i++)
@@ -153,7 +161,7 @@ namespace FindingClosestPoints
             }
         }
 
-        //缩放窗口或最小化还原窗口后重画图形。需要重新取得panel大小。
+        //缩放窗口或最小化还原窗口后重画图形。需要重新取得panel1大小。
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             panelGragh.Clear(panel1.BackColor);

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace FindingClosestPoints
 {
+    //该类保存平面上所有点的坐标，并实现了nLogn和n^2两个查找最近点的算法
     class AxisWithPoints
     {
+        //使用Points List存储所有的点。
         public List<double[]> Points =new List<double[]>();
 
         public AxisWithPoints(int initPointsNumber = 0)
@@ -80,12 +82,14 @@ namespace FindingClosestPoints
                 neard = neard2;
                 nearPoints = nearPoints2;
             }
+            //查找距离中线距离为min(d1,d2)的所有点
             double halfX=PointsList[halfLength][0];
             List<double[]> HalfLinePoints = new List<double[]>();
             foreach (double[] point in PointsList)
             {
                 if (Math.Abs(point[0] - halfX) < neard) HalfLinePoints.Add(point);
             }
+            //在y方向上依次查找是否有足够近的点
             HalfLinePoints.Sort(SortByY);
             for (int i = 0; i < HalfLinePoints.Count; i++)
             {
@@ -109,6 +113,7 @@ namespace FindingClosestPoints
             return FindClosest(Points);
         }
 
+        //通过n^2复杂度算法寻找最近点对
         public double[][] FindClosestn2()
         {
             double[][] nearPoints = new double[2][]; ;
