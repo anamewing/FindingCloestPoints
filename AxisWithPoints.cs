@@ -109,6 +109,27 @@ namespace FindingClosestPoints
             return FindClosest(Points);
         }
 
+        public double[][] FindClosestn2()
+        {
+            double[][] nearPoints = new double[2][]; ;
+            double neard = -1;
+            for (int i = 0; i < Points.Count-1; i++)
+            {
+                for (int j = 1; j < Points.Count-i; j++)
+                {
+                    if ((i + j) >= Points.Count) continue;
+                    double tempD = distance2Points(Points[i], Points[i + j]);
+                    if (tempD < neard)
+                    {
+                        neard = tempD;
+                        nearPoints[0] = Points[i];
+                        nearPoints[1] = Points[i + j];
+                    }
+                }
+            }
+            return nearPoints;
+        }
+
         double distance2Points(double[] point1, double[] point2)
         {
             return Math.Sqrt(Math.Pow(point1[0]-point2[0],2)+Math.Pow(point1[1]-point2[1],2));

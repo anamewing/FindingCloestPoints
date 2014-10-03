@@ -130,5 +130,28 @@ namespace FindingClosestPoints
             }
         }
 
+        private void caln2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridViewTimeComplex.Rows.Count; i++)
+            {
+                int pointsNumber = 0;
+                try
+                {
+                    pointsNumber = (int)dataGridViewTimeComplex.Rows[i].Cells[0].Value;
+                }
+                catch (Exception excep) { textLogging(excep.ToString()); continue; }
+                if (pointsNumber < 1) continue;
+                AxisWithPoints AxisWithPoints3 = new AxisWithPoints(pointsNumber);
+                textLogging("n^2开始寻找于" + DateTime.Now.ToLongTimeString());
+                textLogging("n^2共计" + AxisWithPoints3.Points.Count.ToString() + "个点");
+                var watch = System.Diagnostics.Stopwatch.StartNew();
+                AxisWithPoints3.FindClosestn2();
+                watch.Stop();
+                textLogging("n^2结束寻找于" + DateTime.Now.ToLongTimeString());
+                textLogging("n^2共计耗时" + watch.ElapsedMilliseconds.ToString() + "毫秒");
+                dataGridViewTimeComplex.Rows[i].Cells[2].Value = watch.ElapsedMilliseconds;
+            }
+        }
+
     }
 }

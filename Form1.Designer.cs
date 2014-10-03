@@ -41,15 +41,15 @@
             this.caln2 = new System.Windows.Forms.Button();
             this.calnLogn = new System.Windows.Forms.Button();
             this.dataGridViewTimeComplex = new System.Windows.Forms.DataGridView();
+            this.pointsNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slowtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxRandomNumer = new System.Windows.Forms.TextBox();
             this.richTextBoxOutputResult = new System.Windows.Forms.RichTextBox();
             this.buttonRandomAndFind = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.pointsNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slowtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pointsGridDraw)).BeginInit();
@@ -186,6 +186,7 @@
             this.caln2.TabIndex = 2;
             this.caln2.Text = "测试n^2";
             this.caln2.UseVisualStyleBackColor = true;
+            this.caln2.Click += new System.EventHandler(this.caln2_Click);
             // 
             // calnLogn
             // 
@@ -212,6 +213,24 @@
             this.dataGridViewTimeComplex.RowTemplate.Height = 23;
             this.dataGridViewTimeComplex.Size = new System.Drawing.Size(341, 329);
             this.dataGridViewTimeComplex.TabIndex = 0;
+            // 
+            // pointsNumber
+            // 
+            this.pointsNumber.HeaderText = "点数量";
+            this.pointsNumber.Name = "pointsNumber";
+            this.pointsNumber.ReadOnly = true;
+            // 
+            // time
+            // 
+            this.time.HeaderText = "nLog(n)耗费时间";
+            this.time.Name = "time";
+            this.time.ReadOnly = true;
+            // 
+            // slowtime
+            // 
+            this.slowtime.HeaderText = "n2耗费时间";
+            this.slowtime.Name = "slowtime";
+            this.slowtime.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -275,24 +294,6 @@
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox2.Size = new System.Drawing.Size(104, 456);
             this.textBox2.TabIndex = 1;
-            // 
-            // pointsNumber
-            // 
-            this.pointsNumber.HeaderText = "点数量";
-            this.pointsNumber.Name = "pointsNumber";
-            this.pointsNumber.ReadOnly = true;
-            // 
-            // time
-            // 
-            this.time.HeaderText = "nLog(n)耗费时间";
-            this.time.Name = "time";
-            this.time.ReadOnly = true;
-            // 
-            // slowtime
-            // 
-            this.slowtime.HeaderText = "n2耗费时间";
-            this.slowtime.Name = "slowtime";
-            this.slowtime.ReadOnly = true;
             // 
             // Form1
             // 
