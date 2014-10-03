@@ -98,11 +98,12 @@ namespace FindingClosestPoints
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            int maxPower = 5;
-            dataGridViewTimeComplex.Rows.Add(maxPower-1);
-            for (int i = 0; i < maxPower; i++)
+            int maxPower = 16;
+            int minPoewr = 8;
+            dataGridViewTimeComplex.Rows.Add(maxPower-1-minPoewr);
+            for (int i = 0; i < maxPower-minPoewr; i++)
             {
-                dataGridViewTimeComplex.Rows[i].Cells[0].Value =(int) Math.Pow(10, i+1);
+                dataGridViewTimeComplex.Rows[i].Cells[0].Value =(int) Math.Pow(2, i+minPoewr);
             }
         }
 
